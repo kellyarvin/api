@@ -15,15 +15,7 @@
     </header>
     <main>
       <form id="chartForm">
-        <div class="form-group">
-          <label for="chartType">Choose Chart Type:</label>
-          <div id="chartOptions">
-            <img src="https://image-charts.com/chart?cht=bvg&chd=t:10,20,30,40,50&chl&chs=200x100" alt="Vertical Bar Chart" data-chart-type="bvg" class="chart-option">
-            <img src="https://image-charts.com/chart?cht=bhs&chd=t:10,20,30,40,50&chl&chs=200x100" alt="Horizontal Bar Chart" data-chart-type="bhs" class="chart-option">
-            <img src="https://image-charts.com/chart?cht=p&chd=t:10,20,30,40,50&chl&chs=200x100" alt="Pie Chart" data-chart-type="p" class="chart-option">
-            <img src="https://image-charts.com/chart?cht=lc&chd=t:10,20,30,40,50&chl&chs=200x100" alt="Line Chart" data-chart-type="lc" class="chart-option">
-          </div>
-        </div>
+        
 
         <input type="hidden" id="chartType">
 
@@ -36,6 +28,16 @@
           <label for="chartLabels">Chart Labels (pipe-separated):</label>
           <input type="text" id="chartLabels" placeholder="Label1|Label2|Label3|Label4|Label5">
         </div>
+
+        <div class="form-group">
+            <label for="chartType">Choose Chart Type:</label>
+            <div id="chartOptions">
+              <img src="https://image-charts.com/chart?cht=bvg&chd=t:10,20,30,40,50&chl&chs=200x100" alt="Vertical Bar Chart" data-chart-type="bvg" class="chart-option">
+              <img src="https://image-charts.com/chart?cht=bhs&chd=t:10,20,30,40,50&chl&chs=200x100" alt="Horizontal Bar Chart" data-chart-type="bhs" class="chart-option">
+              <img src="https://image-charts.com/chart?cht=p&chd=t:10,20,30,40,50&chl&chs=200x100" alt="Pie Chart" data-chart-type="p" class="chart-option">
+              <img src="https://image-charts.com/chart?cht=lc&chd=t:10,20,30,40,50&chl&chs=200x100" alt="Line Chart" data-chart-type="lc" class="chart-option">
+            </div>
+          </div>
       </form>
 
       <div id="chartContainer">
