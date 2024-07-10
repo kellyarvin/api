@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const chartForm = document.getElementById('chartForm');
     const chartTypeInput = document.getElementById('chartType');
@@ -31,7 +30,24 @@ document.addEventListener('DOMContentLoaded', () => {
         chs: '700x300',
       });
   
-      chartImage.src = `${baseUrl}?${params.toString()}`;
+      // Clear previous chart image to show loading state
+      chartImage.src = '';
+  
+      // Fetch chart image from API
+      fetch(`${baseUrl}?${params.toString()}`)
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.url;
+        })
+        .then(chartUrl => {
+          chartImage.src = chartUrl;
+        })
+        .catch(error => {
+          console.error('Error fetching chart:', error);
+          alert('Error fetching chart. Please try again later.');
+        });
     }
   
     chartOptions.forEach(option => {
@@ -62,4 +78,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
-
