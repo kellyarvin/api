@@ -8,26 +8,35 @@
 </head>
 <body>
   <h1>Chart Generator</h1>
-  <form id="chartForm">
-    <label for="chartType">Chart Type:</label>
-    <select id="chartType">
-      <option value="bvg">Vertical Bar Chart</option>
-      <option value="bhs">Horizontal Bar Chart</option>
-      <option value="p">Pie Chart</option>
-      <option value="lc">Line Chart</option>
-    </select>
+  <div class="content">
+    <form id="chartForm">
+      <div class="form-group">
+        <label for="chartType">Chart Type:</label>
+        <select id="chartType">
+          <option value="bvg">Vertical Bar Chart</option>
+          <option value="bhs">Horizontal Bar Chart</option>
+          <option value="p">Pie Chart</option>
+          <option value="lc">Line Chart</option>
+        </select>
+      </div>
 
-    <label for="chartData">Chart Data (comma-separated):</label>
-    <input type="text" id="chartData" placeholder="10,20,30,40,50">
+      <div class="form-group">
+        <label for="chartData">Chart Data (comma-separated):</label>
+        <input type="text" id="chartData" placeholder="10,20,30,40,50">
+      </div>
 
-    <label for="chartLabels">Chart Labels (pipe-separated):</label>
-    <input type="text" id="chartLabels" placeholder="Label1|Label2|Label3|Label4|Label5">
+      <div class="form-group">
+        <label for="chartLabels">Chart LabelS</label>
+        <input type="text" id="chartLabels" placeholder="Label1|Label2|Label3|Label4|Label5">
+      </div>
 
-    <button type="submit">Generate Chart</button>
-  </form>
+      <button type="submit">Generate Chart</button>
+    </form>
 
-  <div id="chartContainer">
-    <img id="chartImage" src="" alt="Generated Chart">
+    <div id="chartContainer">
+      <img id="chartImage" src="" alt="Generated Chart">
+      <p id="noImageMessage" style="display: none;">No chart image yet</p>
+    </div>
   </div>
 
   <script src="script.js"></script>
