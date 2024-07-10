@@ -3,31 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Charts API</title>
+  <title>Chart Generator</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <h1>Chart Generator</h1>
-  <form id="chartForm">
-    <label for="chartType">Chart Type:</label>
-    <select id="chartType">
-      <option value="bvg">Vertical Bar Chart</option>
-      <option value="bhs">Horizontal Bar Chart</option>
-      <option value="p">Pie Chart</option>
-      <option value="lc">Line Chart</option>
-    </select>
+  <div class="container">
+    <div class="generator">
+      <header>
+        <h1>Chart Generator</h1>
+      </header>
+      <main>
+        <form id="chartForm">
+          <div class="form-group">
+            <label for="chartType">Choose Chart Type:</label>
+            <div id="chartOptions">
+              <img src="https://image-charts.com/chart?cht=bvg&chd=t:10,20,30,40,50&chl&chs=200x100" alt="Vertical Bar Chart" data-chart-type="bvg" class="chart-option">
+              <img src="https://image-charts.com/chart?cht=bhs&chd=t:10,20,30,40,50&chl&chs=200x100" alt="Horizontal Bar Chart" data-chart-type="bhs" class="chart-option">
+              <img src="https://image-charts.com/chart?cht=p&chd=t:10,20,30,40,50&chl&chs=200x100" alt="Pie Chart" data-chart-type="p" class="chart-option">
+              <img src="https://image-charts.com/chart?cht=lc&chd=t:10,20,30,40,50&chl&chs=200x100" alt="Line Chart" data-chart-type="lc" class="chart-option">
+            </div>
+          </div>
 
-    <label for="chartData">Chart Data (comma-separated):</label>
-    <input type="text" id="chartData" placeholder="10,20,30,40,50">
+          <input type="hidden" id="chartType">
 
-    <label for="chartLabels">Chart Labels (pipe-separated):</label>
-    <input type="text" id="chartLabels" placeholder="Label1|Label2|Label3|Label4|Label5">
+          <div class="form-group">
+            <label for="chartData">Chart Data (comma-separated):</label>
+            <input type="text" id="chartData" placeholder="10,20,30,40,50">
+          </div>
 
-    <button type="submit">Generate Chart</button>
-  </form>
+          <div class="form-group">
+            <label for="chartLabels">Chart Labels (pipe-separated):</label>
+            <input type="text" id="chartLabels" placeholder="Label1|Label2|Label3|Label4|Label5">
+          </div>
+        </form>
+      </main>
+    </div>
 
-  <div id="chartContainer">
-    <img id="chartImage" src="" alt="Generated Chart">
+    <div id="chartContainer">
+      <header>
+        <h1>Generated Chart</h1>
+      </header>
+      <div class="chart">
+        <img id="chartImage" src="" alt="Generated Chart">
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
