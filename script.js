@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const chartForm = document.getElementById('chartForm');
     const chartTypeInput = document.getElementById('chartType');
@@ -7,10 +8,18 @@ document.addEventListener('DOMContentLoaded', () => {
   
     function generateChart() {
       const chartType = chartTypeInput.value;
-      const chartData = document.getElementById('chartData').value;
-      const chartLabels = document.getElementById('chartLabels').value;
+      const chartDataInput = document.getElementById('chartData');
+      const chartLabelsInput = document.getElementById('chartLabels');
+      
+      const chartData = chartDataInput.value.trim();
+      const chartLabels = chartLabelsInput.value.trim();
+      
+      const dataValues = chartData.split(',');
+      const labelValues = chartLabels.split('|');
   
-      if (!chartType || !chartData || !chartLabels) {
+      // Check if the number of data points matches the number of labels
+      if (dataValues.length !== labelValues.length) {
+        alert('Error: The number of data points must match the number of labels.');
         return;
       }
   
@@ -53,3 +62,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
   
+
