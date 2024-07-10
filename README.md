@@ -33,3 +33,6 @@ This project integrates with the [Image Charts API](https://www.image-charts.com
 3. Select a chart type from the options provided.
 4. Enter data and labels as required for the selected chart type.
 5. Click on the chart type image to generate and display the chart
+
+## Github Page
+- https://kellyarvin.github.io/api/
